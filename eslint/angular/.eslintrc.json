@@ -25,7 +25,7 @@
   "ignorePatterns": ["*.spec.ts", "**/test.ts"],
   "overrides": [
     {
-      "extends": "@ngneers/eslint-config-base",
+      "extends": "@ngneers/eslint-config",
       "files": ["*.component.ts"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {

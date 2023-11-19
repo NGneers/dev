@@ -101,7 +101,7 @@ Install the following dev dependencies:
   ```js
   import { getAngularJestConfig } from "@ngneers/jest-config-angular";
 
-  /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+  /** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
   export default {
     ...getAngularJestConfig(/* Optionally provide options */),
   };
@@ -114,7 +114,7 @@ Install the following dev dependencies:
   ```js
   import { getJestConfig } from "@ngneers/jest-config";
 
-  /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+  /** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
   export default {
     ...getJestConfig(/* Optionally provide options */),
   };

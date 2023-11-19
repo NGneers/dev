@@ -2,6 +2,15 @@
 
 This repository contains some common things that most projects need in the NGneers organization.
 
+| Package name                   | Status                                                                                                                                                                  |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| @ngneers/prettier-config       | [![npm](https://img.shields.io/npm/v/@ngneers/prettier-config?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/prettier-config)             |
+| @ngneers/eslint-config         | [![npm](https://img.shields.io/npm/v/@ngneers/eslint-config?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/eslint-config)                 |
+| @ngneers/eslint-config-nodejs  | [![npm](https://img.shields.io/npm/v/@ngneers/eslint-config-nodejs?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/eslint-config-nodejs)   |
+| @ngneers/eslint-config-angular | [![npm](https://img.shields.io/npm/v/@ngneers/eslint-config-angular?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/eslint-config-angular) |
+| @ngneers/jest-config           | [![npm](https://img.shields.io/npm/v/@ngneers/jest-config?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/jest-config)                     |
+| @ngneers/jest-config-angular   | [![npm](https://img.shields.io/npm/v/@ngneers/jest-config-angular?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/jest-config-angular)     |
+
 # 🚀 Setup a new repository
 
 1. Create a new repository in the NGneers organization

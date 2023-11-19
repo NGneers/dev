@@ -1,0 +1,21 @@
+{
+  "name": "@ngneers/eslint-config",
+  "version": "1.0.0",
+  "homepage": "https://https://github.com/NGneers/dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NGneers/dev.git"
+  },
+  "description": "ESLint configuration for projects in the NGneers Github organization",
+  "main": ".eslintrc.json",
+  "author": "NGneers",
+  "license": "MIT",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">= 6",
+    "@typescript-eslint/parser": ">= 6",
+    "eslint": ">= 8",
+    "eslint-config-prettier": ">= 9",
+    "eslint-plugin-import": ">= 2",
+    "eslint-plugin-unused-imports": ">= 3"
+  }
+}

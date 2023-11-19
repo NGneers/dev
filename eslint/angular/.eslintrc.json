@@ -1,0 +1,45 @@
+{
+  "extends": ["plugin:@angular-eslint/recommended", "@ngneers/eslint-config"],
+  "rules": {
+    "@angular-eslint/directive-selector": [
+      "error",
+      {
+        "type": "attribute",
+        "style": "camelCase"
+      }
+    ],
+    "@angular-eslint/component-selector": [
+      "error",
+      {
+        "type": "element",
+        "style": "kebab-case"
+      }
+    ],
+    "@angular-eslint/component-class-suffix": [
+      "error",
+      {
+        "suffixes": ["Component"]
+      }
+    ]
+  },
+  "ignorePatterns": ["*.spec.ts", "**/test.ts"],
+  "overrides": [
+    {
+      "extends": "@ngneers/eslint-config-base",
+      "files": ["*.component.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+      },
+      "plugins": ["@angular-eslint/template"],
+      "processor": "@angular-eslint/template/extract-inline-html"
+    },
+    {
+      "files": ["*.component.html"],
+      "parser": "@angular-eslint/template-parser",
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "plugins": ["@angular-eslint/template"]
+    }
+  ]
+}

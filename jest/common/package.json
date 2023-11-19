@@ -1,0 +1,20 @@
+{
+  "name": "@ngneers/jest-config",
+  "version": "1.0.0",
+  "homepage": "https://https://github.com/NGneers/dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NGneers/dev.git"
+  },
+  "description": "Jest configuration for projects in the NGneers Github organization",
+  "type": "module",
+  "main": "index.js",
+  "author": "NGneers",
+  "license": "MIT",
+  "peerDependencies": {
+    "@types/jest": ">= 29",
+    "jest": ">= 29",
+    "jest-junit": ">= 16",
+    "ts-jest": ">= 29"
+  }
+}

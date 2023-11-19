@@ -1,0 +1,18 @@
+{
+  "name": "@ngneers/jest-config-angular",
+  "version": "1.0.0",
+  "homepage": "https://https://github.com/NGneers/dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NGneers/dev.git"
+  },
+  "description": "Jest configuration for angular projects in the NGneers Github organization",
+  "type": "module",
+  "main": "index.js",
+  "author": "NGneers",
+  "license": "MIT",
+  "peerDependencies": {
+    "@ngneers/jest-config": ">= 1",
+    "jest-preset-angular": ">= 13"
+  }
+}

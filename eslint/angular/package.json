@@ -1,0 +1,20 @@
+{
+  "name": "@ngneers/eslint-config-base",
+  "version": "1.0.0",
+  "homepage": "https://https://github.com/NGneers/dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NGneers/dev.git"
+  },
+  "description": "ESLint configuration for Angular projects in the NGneers Github organization",
+  "main": ".eslintrc.json",
+  "author": "NGneers",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular-eslint/builder": ">= 17.0.1",
+    "@angular-eslint/eslint-plugin": ">= 17.0.1",
+    "@angular-eslint/eslint-plugin-template": ">= 17.0.1",
+    "@angular-eslint/template-parser": ">= 17.0.1",
+    "@ngneers/eslint-config": ">= 1"
+  }
+}

@@ -1,4 +1,4 @@
-# NGneeds dev
+# NGneers dev
 
 This repository contains some common things that most projects need in the NGneers organization.
 

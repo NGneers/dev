@@ -1,13 +1,14 @@
 {
   "name": "@ngneers/prettier-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://https://github.com/NGneers/dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/NGneers/dev.git"
   },
   "description": "Prettier configuration for projects in the NGneers Github organization",
-  "main": ".prettierrc.json",
+  "type": "module",
+  "exports": "./index.js",
   "author": "NGneers",
   "license": "MIT",
   "peerDependencies": {

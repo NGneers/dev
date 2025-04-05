@@ -27,6 +27,7 @@ Install the following dev dependencies:
   `@ngneers/prettier-config`
   `prettier`
 - **eslint:**<br>
+  `@eslint/js`
   `@ngneers/eslint-config`
   `@typescript-eslint/eslint-plugin`
   `@typescript-eslint/parser`
@@ -71,8 +72,30 @@ Add `"prettier": "@ngneers/prettier-config"` to the package.json.
 
 ### Other projects
 
+#### Flag Config
+
+- Create `eslint.config.mjs` in the root folder of the project:
+
+  ```js
+  import { defineConfig } from "eslint/config";
+  import ngneers from "@ngneers/eslint-config";
+
+  export default defineConfig([
+    ngneers.configs.common,
+    {
+      languageOptions: {
+        parserOptions: {
+          project: "./tsconfig.json",
+        },
+      },
+    },
+  ]);
+  ```
+
+#### Legacy Config
+
 - Create `.eslintrc.json` in the root folder of the project:
-  ```json
+  ```js
   {
     "extends": ["@ngneers/eslint-config"],
     "parserOptions": {

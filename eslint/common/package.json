@@ -1,21 +1,38 @@
 {
   "name": "@ngneers/eslint-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "homepage": "https://https://github.com/NGneers/dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/NGneers/dev.git"
   },
   "description": "ESLint configuration for projects in the NGneers Github organization",
-  "main": ".eslintrc.json",
+  "type": "module",
+  "main": "index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./legacy": {
+      "default": "./.eslintrc.json"
+    },
+    "./package.json": "./package.json"
+  },
   "author": "NGneers",
   "license": "MIT",
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">= 6",
-    "@typescript-eslint/parser": ">= 6",
-    "eslint": ">= 8",
-    "eslint-config-prettier": ">= 9",
-    "eslint-plugin-import": ">= 2",
-    "eslint-plugin-unused-imports": ">= 3"
+    "@eslint/js": "^9.24.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unused-imports": "^4.1.4"
+  },
+  "packageManager": "pnpm@8.6.12+sha512.1336b80b948efd7979218a33ba96d9e4d380e6578144f6319979977deec6e3fe2e0a444b864b3ce2b077dda8adc4d654fee32b9c31868f0acb92da0abcf8ea1c",
+  "devDependencies": {
+    "@types/eslint": "^9.6.1"
   }
 }

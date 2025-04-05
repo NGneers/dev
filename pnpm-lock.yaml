@@ -8,21 +8,12 @@ importers:
 
   eslint/angular:
     dependencies:
-      '@angular-eslint/builder':
-        specifier: '>= 19'
-        version: 19.0.0(eslint@9.24.0)(typescript@5.8.3)
-      '@angular-eslint/eslint-plugin':
-        specifier: '>= 19'
-        version: 19.0.0(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
-      '@angular-eslint/eslint-plugin-template':
-        specifier: '>= 19'
-        version: 19.0.0(@typescript-eslint/types@8.29.0)(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
-      '@angular-eslint/template-parser':
-        specifier: '>= 19'
-        version: 19.0.0(eslint@9.24.0)(typescript@5.8.3)
       '@ngneers/eslint-config':
         specifier: '>= 2'
         version: link:../common
+      angular-eslint:
+        specifier: '>= 19'
+        version: 19.0.0(eslint@9.24.0)(typescript-eslint@8.29.0)(typescript@5.8.3)
 
   eslint/common:
     dependencies:
@@ -55,7 +46,7 @@ importers:
   eslint/nodejs:
     dependencies:
       '@ngneers/eslint-config':
-        specifier: '>= 1'
+        specifier: '>= 2'
         version: link:../common
 
   jest/angular:
@@ -65,7 +56,7 @@ importers:
         version: link:../common
       jest-preset-angular:
         specifier: '>= 13'
-        version: 13.0.0(@angular-devkit/build-angular@15.2.11)(@angular/compiler-cli@15.2.10)(@angular/core@15.2.10)(@angular/platform-browser-dynamic@15.2.10)(@babel/core@7.20.12)(jest@29.7.0)(typescript@5.8.3)
+        version: 13.0.0(@angular-devkit/build-angular@15.2.11)(@angular/compiler-cli@15.2.10)(@angular/core@15.2.10)(@angular/platform-browser-dynamic@15.2.10)(@babel/core@7.19.3)(jest@29.7.0)(typescript@5.8.3)
 
   jest/common:
     dependencies:
@@ -283,6 +274,19 @@ packages:
       source-map: 0.7.4
     dev: false
 
+  /@angular-devkit/schematics@19.2.6:
+    resolution: {integrity: sha512-YTAxNnT++5eflx19OUHmOWu597/TbTel+QARiZCv1xQw99+X8DCKKOUXtqBRd53CAHlREDI33Rn/JLY3NYgMLQ==}
+    engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
+    dependencies:
+      '@angular-devkit/core': 19.2.6
+      jsonc-parser: 3.3.1
+      magic-string: 0.30.17
+      ora: 5.4.1
+      rxjs: 7.8.1
+    transitivePeerDependencies:
+      - chokidar
+    dev: false
+
   /@angular-eslint/builder@19.0.0(eslint@9.24.0)(typescript@5.8.3):
     resolution: {integrity: sha512-vi68ADoEKrg2SB87jwUCaVhOhWPpXyG6X8QJzg8AiYDCQY721x1l6Pdz6WZOPruWALyoIyFGFXqtuysDGqIBhw==}
     peerDependencies:
@@ -331,6 +335,24 @@ packages:
       '@typescript-eslint/utils': 8.29.0(eslint@9.24.0)(typescript@5.8.3)
       eslint: 9.24.0
       typescript: 5.8.3
+    dev: false
+
+  /@angular-eslint/schematics@19.0.0(@typescript-eslint/types@8.29.0)(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3):
+    resolution: {integrity: sha512-fle4SMxjI+91y5eR6hVG7yhzJHAw87LudHw918hGUVn2INIAW1TTuuQNoah8kNg9I6ICIDat26IenD4nOau6Gg==}
+    dependencies:
+      '@angular-devkit/core': 19.2.6
+      '@angular-devkit/schematics': 19.2.6
+      '@angular-eslint/eslint-plugin': 19.0.0(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
+      '@angular-eslint/eslint-plugin-template': 19.0.0(@typescript-eslint/types@8.29.0)(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
+      ignore: 6.0.2
+      semver: 7.6.3
+      strip-json-comments: 3.1.1
+    transitivePeerDependencies:
+      - '@typescript-eslint/types'
+      - '@typescript-eslint/utils'
+      - chokidar
+      - eslint
+      - typescript
     dev: false
 
   /@angular-eslint/template-parser@19.0.0(eslint@9.24.0)(typescript@5.8.3):
@@ -496,14 +518,14 @@ packages:
     resolution: {integrity: sha512-XsMfHovsUYHFMdrIHkZphTN/2Hzzi78R08NuHfDBehym2VsPDL6Zn/JAD/JQdnRvbSsbQc4mVaU1m6JgtTEElg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@ampproject/remapping': 2.2.0
+      '@ampproject/remapping': 2.3.0
       '@babel/code-frame': 7.26.2
-      '@babel/generator': 7.20.14
+      '@babel/generator': 7.27.0
       '@babel/helper-compilation-targets': 7.27.0
       '@babel/helper-module-transforms': 7.26.0(@babel/core@7.20.12)
       '@babel/helpers': 7.27.0
       '@babel/parser': 7.27.0
-      '@babel/template': 7.20.7
+      '@babel/template': 7.27.0
       '@babel/traverse': 7.27.0
       '@babel/types': 7.27.0
       convert-source-map: 1.9.0
@@ -1002,7 +1024,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.12
-      '@babel/helper-annotate-as-pure': 7.18.6
+      '@babel/helper-annotate-as-pure': 7.25.9
       '@babel/helper-create-class-features-plugin': 7.27.0(@babel/core@7.20.12)
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.20.12)
@@ -2717,7 +2739,7 @@ packages:
     resolution: {integrity: sha512-q9CRWjpHCMIh5sVyefoD1cA7PkvILqCZsnSOEUUivORLjxCO/Irmue2DprETiNgEqktDBZaM1Bi+jrarx1XdCg==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      semver: 7.5.3
+      semver: 7.7.1
     dev: false
 
   /@rtsao/scc@1.1.0:
@@ -2804,7 +2826,7 @@ packages:
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
     dependencies:
       '@types/eslint': 9.6.1
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.7
     dev: false
 
   /@types/eslint@9.6.1:
@@ -3366,6 +3388,30 @@ packages:
       require-from-string: 2.0.2
     dev: false
 
+  /angular-eslint@19.0.0(eslint@9.24.0)(typescript-eslint@8.29.0)(typescript@5.8.3):
+    resolution: {integrity: sha512-8qYxqVMoRVKlpDKuGiNMG9ZPk7ke7ZOo3IxefFsB7Fpom8iRjOnH9tD9gLeYCHZWY1qYignLdeRqYmF/rRxF1A==}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0
+      typescript: '*'
+      typescript-eslint: ^8.0.0
+    dependencies:
+      '@angular-devkit/core': 19.2.6
+      '@angular-devkit/schematics': 19.2.6
+      '@angular-eslint/builder': 19.0.0(eslint@9.24.0)(typescript@5.8.3)
+      '@angular-eslint/eslint-plugin': 19.0.0(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
+      '@angular-eslint/eslint-plugin-template': 19.0.0(@typescript-eslint/types@8.29.0)(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
+      '@angular-eslint/schematics': 19.0.0(@typescript-eslint/types@8.29.0)(@typescript-eslint/utils@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
+      '@angular-eslint/template-parser': 19.0.0(eslint@9.24.0)(typescript@5.8.3)
+      '@typescript-eslint/types': 8.29.0
+      '@typescript-eslint/utils': 8.29.0(eslint@9.24.0)(typescript@5.8.3)
+      eslint: 9.24.0
+      typescript: 5.8.3
+      typescript-eslint: 8.29.0(eslint@9.24.0)(typescript@5.8.3)
+    transitivePeerDependencies:
+      - chokidar
+      - supports-color
+    dev: false
+
   /ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
     engines: {node: '>=6'}
@@ -3514,7 +3560,7 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      browserslist: 4.21.5
+      browserslist: 4.24.4
       caniuse-lite: 1.0.30001711
       fraction.js: 4.3.7
       normalize-range: 0.1.2
@@ -4160,7 +4206,7 @@ packages:
       postcss-modules-scope: 3.2.1(postcss@8.4.31)
       postcss-modules-values: 4.0.0(postcss@8.4.31)
       postcss-value-parser: 4.2.0
-      semver: 7.5.3
+      semver: 7.7.1
       webpack: 5.76.1(esbuild@0.17.8)
     dev: false
 
@@ -5585,6 +5631,11 @@ packages:
     engines: {node: '>= 4'}
     dev: false
 
+  /ignore@6.0.2:
+    resolution: {integrity: sha512-InwqeHHN2XpumIkMvpl/DCJVrAHgCsG5+cn1XlnLWGwtZBm8QJfSusItfrwx81CTp5agNZqpKU2J/ccC5nGT4A==}
+    engines: {node: '>= 4'}
+    dev: false
+
   /image-size@0.5.5:
     resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
     engines: {node: '>=0.10.0'}
@@ -6270,7 +6321,7 @@ packages:
       jest-resolve: 29.7.0
     dev: false
 
-  /jest-preset-angular@13.0.0(@angular-devkit/build-angular@15.2.11)(@angular/compiler-cli@15.2.10)(@angular/core@15.2.10)(@angular/platform-browser-dynamic@15.2.10)(@babel/core@7.20.12)(jest@29.7.0)(typescript@5.8.3):
+  /jest-preset-angular@13.0.0(@angular-devkit/build-angular@15.2.11)(@angular/compiler-cli@15.2.10)(@angular/core@15.2.10)(@angular/platform-browser-dynamic@15.2.10)(@babel/core@7.19.3)(jest@29.7.0)(typescript@5.8.3):
     resolution: {integrity: sha512-FNaWL41PgW3yvleB423pf1Z7xqaDaFMJxi2TwUek9J1p3SHT1Se+A2jeOI27XcC16zj87blUuffh/Smse2Grpg==}
     engines: {node: ^14.15.0 || >=16.10.0}
     peerDependencies:
@@ -6291,7 +6342,7 @@ packages:
       jest-environment-jsdom: 29.7.0
       jest-util: 29.7.0
       pretty-format: 29.7.0
-      ts-jest: 29.3.1(@babel/core@7.20.12)(esbuild@0.25.2)(jest@29.7.0)(typescript@5.8.3)
+      ts-jest: 29.3.1(@babel/core@7.19.3)(esbuild@0.25.2)(jest@29.7.0)(typescript@5.8.3)
       typescript: 5.8.3
     optionalDependencies:
       esbuild: 0.25.2
@@ -6687,7 +6738,7 @@ packages:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.5.0
+      tslib: 2.8.1
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
@@ -6814,6 +6865,12 @@ packages:
   /magic-string@0.29.0:
     resolution: {integrity: sha512-WcfidHrDjMY+eLjlU+8OvwREqHwpgCeKVBUpQ3OhYYuvfaYCUgcbuBzappNzZvg/v8onU3oQj+BYpkOJe9Iw4Q==}
     engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.0
+    dev: false
+
+  /magic-string@0.30.17:
+    resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
     dev: false
@@ -7461,7 +7518,7 @@ packages:
       cosmiconfig: 7.1.0
       klona: 2.0.6
       postcss: 8.4.31
-      semver: 7.5.3
+      semver: 7.7.1
       webpack: 5.76.1(esbuild@0.17.8)
     dev: false
 
@@ -7858,7 +7915,7 @@ packages:
   /rxjs@7.8.2:
     resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
   /safe-array-concat@1.1.3:
@@ -7931,7 +7988,7 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      chokidar: 3.5.3
+      chokidar: 3.6.0
       immutable: 4.3.7
       source-map-js: 1.2.1
     dev: false
@@ -7998,6 +8055,12 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: false
+
+  /semver@7.6.3:
+    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
+    engines: {node: '>=10'}
+    hasBin: true
     dev: false
 
   /semver@7.7.1:
@@ -8563,7 +8626,7 @@ packages:
       yargs-parser: 21.1.1
     dev: false
 
-  /ts-jest@29.3.1(@babel/core@7.20.12)(esbuild@0.25.2)(jest@29.7.0)(typescript@5.8.3):
+  /ts-jest@29.3.1(@babel/core@7.19.3)(esbuild@0.25.2)(jest@29.7.0)(typescript@5.8.3):
     resolution: {integrity: sha512-FT2PIRtZABwl6+ZCry8IY7JZ3xMuppsEV9qFVHOVe8jDzggwUZ9TsM4chyJxL9yi6LvkqcZYU3LmapEE454zBQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -8587,7 +8650,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.20.12
+      '@babel/core': 7.19.3
       bs-logger: 0.2.6
       ejs: 3.1.10
       esbuild: 0.25.2
@@ -8701,6 +8764,22 @@ packages:
 
   /typed-assert@1.0.9:
     resolution: {integrity: sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg==}
+    dev: false
+
+  /typescript-eslint@8.29.0(eslint@9.24.0)(typescript@5.8.3):
+    resolution: {integrity: sha512-ep9rVd9B4kQsZ7ZnWCVxUE/xDLUUUsRzE0poAeNu+4CkFErLfuvPt/qtm2EpnSyfvsR0S6QzDFSrPCFBwf64fg==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0
+      typescript: '>=4.8.4 <5.9.0'
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 8.29.0(@typescript-eslint/parser@8.29.0)(eslint@9.24.0)(typescript@5.8.3)
+      '@typescript-eslint/parser': 8.29.0(eslint@9.24.0)(typescript@5.8.3)
+      '@typescript-eslint/utils': 8.29.0(eslint@9.24.0)(typescript@5.8.3)
+      eslint: 9.24.0
+      typescript: 5.8.3
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /typescript@5.8.3:
@@ -8922,7 +9001,7 @@ packages:
       '@types/ws': 8.18.1
       ansi-html-community: 0.0.8
       bonjour-service: 1.3.0
-      chokidar: 3.5.3
+      chokidar: 3.6.0
       colorette: 2.0.20
       compression: 1.8.0
       connect-history-api-fallback: 2.0.0
@@ -8994,7 +9073,7 @@ packages:
       '@webassemblyjs/wasm-parser': 1.11.1
       acorn: 8.14.1
       acorn-import-assertions: 1.9.0(acorn@8.14.1)
-      browserslist: 4.21.5
+      browserslist: 4.24.4
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.18.1
       es-module-lexer: 0.9.3

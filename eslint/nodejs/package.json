@@ -1,16 +1,28 @@
 {
   "name": "@ngneers/eslint-config-nodejs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "homepage": "https://https://github.com/NGneers/dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/NGneers/dev.git"
   },
   "description": "ESLint configuration for NodeJS projects in the NGneers Github organization",
-  "main": ".eslintrc.json",
+  "type": "module",
+  "main": "index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./legacy": {
+      "default": "./.eslintrc.json"
+    },
+    "./package.json": "./package.json"
+  },
   "author": "NGneers",
   "license": "MIT",
   "peerDependencies": {
-    "@ngneers/eslint-config": ">= 1"
+    "@ngneers/eslint-config": ">= 2"
   }
 }

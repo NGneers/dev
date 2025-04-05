@@ -9,7 +9,7 @@ import globals from "globals";
 export default defineConfig([
   eslint.configs.recommended,
   {
-    files: ["**/*.js"],
+    files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
 
     languageOptions: {
       ecmaVersion: 2018,
@@ -17,7 +17,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["**/*.ts"],
+    files: ["**/*.ts", "**/*.mts", "**/*.cts"],
     extends: [_import.flatConfigs.recommended, _import.flatConfigs.typescript],
 
     plugins: {

@@ -1,20 +1,30 @@
 {
   "name": "@ngneers/eslint-config-angular",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "homepage": "https://https://github.com/NGneers/dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/NGneers/dev.git"
   },
   "description": "ESLint configuration for Angular projects in the NGneers Github organization",
-  "main": ".eslintrc.json",
+  "type": "module",
+  "main": "index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./legacy": {
+      "default": "./.eslintrc.json"
+    },
+    "./package.json": "./package.json"
+  },
   "author": "NGneers",
   "license": "MIT",
   "peerDependencies": {
-    "@angular-eslint/builder": ">= 17.0.1",
-    "@angular-eslint/eslint-plugin": ">= 17.0.1",
-    "@angular-eslint/eslint-plugin-template": ">= 17.0.1",
-    "@angular-eslint/template-parser": ">= 17.0.1",
-    "@ngneers/eslint-config": ">= 1"
-  }
+    "@ngneers/eslint-config": ">= 2",
+    "angular-eslint": ">= 19"
+  },
+  "packageManager": "pnpm@8.6.12+sha512.1336b80b948efd7979218a33ba96d9e4d380e6578144f6319979977deec6e3fe2e0a444b864b3ce2b077dda8adc4d654fee32b9c31868f0acb92da0abcf8ea1c"
 }

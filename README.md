@@ -38,41 +38,52 @@ Install the following dev dependencies:
   - **Additional packages for NodeJS projects:**<br>
     `@ngneers/eslint-config-nodejs`
   - **Additional packages for Angular projects:**<br>
-    `@angular-eslint/builder`
-    `@angular-eslint/eslint-plugin`
-    `@angular-eslint/eslint-plugin-template`
-    `@angular-eslint/template-parser`
+    `angular-eslint`
     `@ngneers/eslint-config-angular`
 
 Add `"prettier": "@ngneers/prettier-config"` to the package.json.
 
 ### NodeJS projects
 
-- Create `.eslintrc.json` in the root folder of the project:
-  ```json
-  {
-    "extends": ["@ngneers/eslint-config-nodejs"],
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    }
-  }
+- Create `eslint.config.mjs` in the root folder of the project:
+
+  ```js
+  import { defineConfig } from "eslint/config";
+  import ngneers from "@ngneers/eslint-config-nodejs";
+
+  export default defineConfig([
+    ngneers.configs.nodejs,
+    {
+      languageOptions: {
+        parserOptions: {
+          project: "./tsconfig.json",
+        },
+      },
+    },
+  ]);
   ```
 
 ### Angular projects
 
-- Create `.eslintrc.json` in the root folder of the project:
-  ```json
-  {
-    "extends": ["@ngneers/eslint-config-angular"],
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    }
-  }
+- Create `eslint.config.mjs` in the root folder of the project:
+
+  ```js
+  import { defineConfig } from "eslint/config";
+  import ngneers from "@ngneers/eslint-config-angular";
+
+  export default defineConfig([
+    ngneers.configs.angular,
+    {
+      languageOptions: {
+        parserOptions: {
+          project: "./tsconfig.json",
+        },
+      },
+    },
+  ]);
   ```
 
 ### Other projects
-
-#### Flag Config
 
 - Create `eslint.config.mjs` in the root folder of the project:
 
@@ -90,18 +101,6 @@ Add `"prettier": "@ngneers/prettier-config"` to the package.json.
       },
     },
   ]);
-  ```
-
-#### Legacy Config
-
-- Create `.eslintrc.json` in the root folder of the project:
-  ```js
-  {
-    "extends": ["@ngneers/eslint-config"],
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    }
-  }
   ```
 
 ## Jest

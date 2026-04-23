@@ -12,7 +12,7 @@ export default defineConfig([
     files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
 
     languageOptions: {
-      ecmaVersion: 2018,
+      ecmaVersion: "latest",
       sourceType: "module",
     },
   },

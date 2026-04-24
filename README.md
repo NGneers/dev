@@ -33,6 +33,7 @@ Install the following dev dependencies:
   `@typescript-eslint/parser`
   `eslint`
   `eslint-config-prettier`
+  `eslint-import-resolver-typescript`
   `eslint-plugin-import-x`
   `eslint-plugin-unused-imports`
   - **Additional packages for NodeJS projects:**<br>

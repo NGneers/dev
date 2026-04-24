@@ -1,10 +1,14 @@
 import eslint from "@eslint/js";
 import tsEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import _import from "eslint-plugin-import-x";
 import unusedImports from "eslint-plugin-unused-imports";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
+
+const typeScriptExtensions = [".ts", ".tsx", ".cts", ".mts"];
+const allExtensions = [...typeScriptExtensions, ".js", ".jsx", ".cjs", ".mjs"];
 
 export default defineConfig([
   eslint.configs.recommended,
@@ -18,7 +22,7 @@ export default defineConfig([
   },
   {
     files: ["**/*.ts", "**/*.mts", "**/*.cts"],
-    extends: [_import.flatConfigs.recommended, _import.flatConfigs.typescript],
+    extends: [_import.flatConfigs.recommended],
 
     plugins: {
       "@typescript-eslint": tsEslint,
@@ -31,8 +35,18 @@ export default defineConfig([
       sourceType: "module",
     },
 
+    settings: {
+      "import-x/extensions": allExtensions,
+      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
+      "import-x/parsers": {
+        "@typescript-eslint/parser": [...typeScriptExtensions],
+      },
+      "import-x/resolver-next": [createTypeScriptImportResolver()],
+    },
+
     rules: {
       "prefer-template": "error",
+      "import-x/named": "off",
       "no-unused-vars": "off",
       "no-redeclare": "off",
 

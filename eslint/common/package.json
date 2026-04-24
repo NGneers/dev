@@ -1,6 +1,6 @@
 {
   "name": "@ngneers/eslint-config",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "homepage": "https://github.com/NGneers/dev",
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "@typescript-eslint/parser": "^8.59.0",
     "eslint": "^10.2.1",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-unused-imports": "^4.4.1"
   },

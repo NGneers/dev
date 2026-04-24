@@ -1,6 +1,6 @@
 {
   "name": "@ngneers/eslint-config-angular",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "homepage": "https://github.com/NGneers/dev",
   "repository": {
     "type": "git",
@@ -15,16 +15,13 @@
       "default": "./index.js",
       "types": "./index.d.ts"
     },
-    "./legacy": {
-      "default": "./.eslintrc.json"
-    },
     "./package.json": "./package.json"
   },
   "author": "NGneers",
   "license": "MIT",
   "peerDependencies": {
-    "@ngneers/eslint-config": ">= 2",
-    "angular-eslint": ">= 19"
+    "@ngneers/eslint-config": ">= 3",
+    "angular-eslint": ">= 21"
   },
-  "packageManager": "pnpm@8.6.12+sha512.1336b80b948efd7979218a33ba96d9e4d380e6578144f6319979977deec6e3fe2e0a444b864b3ce2b077dda8adc4d654fee32b9c31868f0acb92da0abcf8ea1c"
+  "packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8"
 }

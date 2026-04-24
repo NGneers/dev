@@ -1,7 +1,7 @@
 import eslint from "@eslint/js";
 import tsEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
-import _import from "eslint-plugin-import";
+import _import from "eslint-plugin-import-x";
 import unusedImports from "eslint-plugin-unused-imports";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
@@ -69,8 +69,8 @@ export default defineConfig([
         },
       ],
 
-      "import/no-unresolved": "off",
-      "import/order": [
+      "import-x/no-unresolved": "off",
+      "import-x/order": [
         "error",
         {
           groups: [
@@ -89,7 +89,7 @@ export default defineConfig([
           warnOnUnassignedImports: true,
         },
       ],
-      "import/no-duplicates": "error",
+      "import-x/no-duplicates": "error",
     },
   },
   {

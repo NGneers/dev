@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install *)",
+      "Bash(node -e \"import\\('./eslint/common/configs/common.js'\\).then\\(m => console.log\\('OK configs:', m.default.length\\)\\)\")",
+      "Bash(node -e \"import\\('./configs/common.js'\\).then\\(m => console.log\\('OK configs:', m.default.length\\)\\).catch\\(e => { console.error\\('FAIL:', e.message\\); process.exit\\(1\\); }\\)\")"
+    ]
+  }
+}

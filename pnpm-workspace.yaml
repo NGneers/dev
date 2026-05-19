@@ -2,3 +2,9 @@ packages:
   - eslint/*
   - jest/*
   - prettier
+
+allowBuilds:
+  esbuild: true
+  unrs-resolver: false
+
+minimumReleaseAge: 3000

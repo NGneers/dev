@@ -1,6 +1,5 @@
 import eslint from "@eslint/js";
-import tsEslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+import tseslint from "typescript-eslint";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import _import from "eslint-plugin-import-x";
 import unusedImports from "eslint-plugin-unused-imports";
@@ -9,6 +8,14 @@ import globals from "globals";
 
 const typeScriptExtensions = [".ts", ".tsx", ".cts", ".mts"];
 const allExtensions = [...typeScriptExtensions, ".js", ".jsx", ".cjs", ".mjs"];
+const tsRecommendedRules = Object.fromEntries(
+  Object.entries(tseslint.plugin.configs.recommended.rules ?? {}).map(
+    ([ruleName, ruleConfig]) => [
+      ruleName.replace("@typescript-eslint/", "ts/"),
+      ruleConfig,
+    ],
+  ),
+);
 
 export default defineConfig([
   eslint.configs.recommended,
@@ -25,22 +32,22 @@ export default defineConfig([
     extends: [_import.flatConfigs.recommended],
 
     plugins: {
-      "@typescript-eslint": tsEslint,
+      ts: tseslint.plugin,
       "unused-imports": unusedImports,
     },
 
     languageOptions: {
-      parser: tsParser,
+      parser: tseslint.parser,
       ecmaVersion: "latest",
       sourceType: "module",
     },
 
     settings: {
       "import-x/extensions": allExtensions,
-      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
-      "import-x/parsers": {
-        "@typescript-eslint/parser": [...typeScriptExtensions],
-      },
+      "import-x/external-module-folders": [
+        "node_modules",
+        "node_modules/@types",
+      ],
       "import-x/resolver-next": [createTypeScriptImportResolver()],
     },
 
@@ -50,10 +57,10 @@ export default defineConfig([
       "no-unused-vars": "off",
       "no-redeclare": "off",
 
-      ...tsEslint.configs.recommended.rules,
-      "@typescript-eslint/prefer-readonly": "error",
-      "@typescript-eslint/no-inferrable-types": "off",
-      "@typescript-eslint/explicit-member-accessibility": [
+      ...tsRecommendedRules,
+      "ts/prefer-readonly": "error",
+      "ts/no-inferrable-types": "off",
+      "ts/explicit-member-accessibility": [
         "warn",
         {
           accessibility: "explicit",
@@ -66,10 +73,10 @@ export default defineConfig([
           },
         },
       ],
-      "@typescript-eslint/parameter-properties": "warn",
-      "@typescript-eslint/no-non-null-assertion": "warn",
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/no-unused-vars": "off",
+      "ts/parameter-properties": "warn",
+      "ts/no-non-null-assertion": "warn",
+      "ts/no-explicit-any": "warn",
+      "ts/no-unused-vars": "off",
 
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
@@ -113,9 +120,9 @@ export default defineConfig([
     },
 
     rules: {
-      "@typescript-eslint/no-non-null-assertion": "off",
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-empty-function": "off",
+      "ts/no-non-null-assertion": "off",
+      "ts/no-explicit-any": "off",
+      "ts/no-empty-function": "off",
 
       "unused-imports/no-unused-vars": "off",
     },

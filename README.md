@@ -29,13 +29,12 @@ Install the following dev dependencies:
 - **eslint:**<br>
   `@eslint/js`
   `@ngneers/eslint-config`
-  `@typescript-eslint/eslint-plugin`
-  `@typescript-eslint/parser`
   `eslint`
   `eslint-config-prettier`
   `eslint-import-resolver-typescript`
   `eslint-plugin-import-x`
   `eslint-plugin-unused-imports`
+  `typescript-eslint`
   - **Additional packages for NodeJS projects:**<br>
     `@ngneers/eslint-config-nodejs`
   - **Additional packages for Angular projects:**<br>

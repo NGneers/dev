@@ -8,8 +8,6 @@ This repository contains some common things that most projects need in the NGnee
 | @ngneers/eslint-config         | [![npm](https://img.shields.io/npm/v/@ngneers/eslint-config?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/eslint-config)                 |
 | @ngneers/eslint-config-nodejs  | [![npm](https://img.shields.io/npm/v/@ngneers/eslint-config-nodejs?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/eslint-config-nodejs)   |
 | @ngneers/eslint-config-angular | [![npm](https://img.shields.io/npm/v/@ngneers/eslint-config-angular?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/eslint-config-angular) |
-| @ngneers/jest-config           | [![npm](https://img.shields.io/npm/v/@ngneers/jest-config?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/jest-config)                     |
-| @ngneers/jest-config-angular   | [![npm](https://img.shields.io/npm/v/@ngneers/jest-config-angular?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/@ngneers/jest-config-angular)     |
 
 # 🚀 Setup a new repository
 
@@ -103,41 +101,29 @@ Add `"prettier": "@ngneers/prettier-config"` to the package.json.
   ]);
   ```
 
-## Jest
+## Vitest
+
+Angular libraries use the Vitest runner of Angular's `@angular/build:unit-test` builder.
 
 Install the following dev dependencies:
 
-- `@ngneers/jest-config`
-  `@types/jest`
-  `jest`
-  `jest-junit`
-  `ts-jest`
-  - **Additional packages for Angular projects:**<br>
-    `@ngneers/jest-config-angular`
-    `jest-preset-angular`
+- `@angular/build`
+  `vitest`
+  `@vitest/coverage-v8`
+  `jsdom`
 
-### Angular projects
+- Add a `test` target to `angular.json`:
 
-- Create `jest.config.js` in the root folder of the project:
-
-  ```js
-  import { getAngularJestConfig } from "@ngneers/jest-config-angular";
-
-  /** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
-  export default {
-    ...getAngularJestConfig(/* Optionally provide options */),
-  };
+  ```json
+  "test": {
+    "builder": "@angular/build:unit-test",
+    "options": {
+      "tsConfig": "tsconfig.spec.json",
+      "runner": "vitest",
+      "coverage": true
+    }
+  }
   ```
 
-### Other projects
-
-- Create `jest.config.js` in the root folder of the project:
-
-  ```js
-  import { getJestConfig } from "@ngneers/jest-config";
-
-  /** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
-  export default {
-    ...getJestConfig(/* Optionally provide options */),
-  };
-  ```
+- Add `"vitest/globals"` to `compilerOptions.types` in `tsconfig.spec.json`
+- Use `ng test` as the `test` script in `package.json`
